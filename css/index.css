@@ -1,0 +1,326 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+#content {
+    width: 60%;
+    height: 60%;
+    overflow: hidden;
+    position: absolute;
+    border: red solid 2px;
+}
+
+.content-wrap {
+    position: relative;
+}
+
+.content-wrap>li {
+    background: #cae1ff;
+    color: red;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.content-wrap>li:nth-child(2) {
+    background: #9bcd9b;
+}
+
+.content-wrap>li:nth-child(3) {
+    background: yellow;
+}
+
+#sun {
+    background-image: url("../images/sun.png");
+    background-repeat: no-repeat;
+    z-index: 99;
+    position: absolute;
+    width: 201px;
+    height: 201px;
+    top: 0px;
+    left: 0px;
+}
+
+.charector {
+    background-image: url("../images/boy.png");
+    background-repeat: no-repeat;
+    height: 291px;
+    width: 151px;
+    background-position: 0px -291px;
+    position: absolute;
+}
+
+#girl {
+    background-image: url("../images/girl.png");
+    background-repeat: no-repeat;
+    height: 291px;
+    width: 151px;
+    position: absolute;
+    background-position: -151px 0px;
+    left: 0px;
+    top: 0px;
+}
+
+.boy-rotate {
+    animation-name: boy-rotate;
+    animation-duration: 850ms;
+    animation-iteration-count: 1;
+    animation-timing-function: step-start;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: boy-rotate;
+    -webkit-animation-duration: 850ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: step-start;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: boy-rotate;
+    -moz-animation-duration: 850ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: step-start;
+    -moz-animation-fill-mode: forwards;
+}
+@keyframes boy-rotate {
+    0% {
+        background-position: -603px -291px;
+    }
+    16.7% {
+        background-position: -150px -0px;
+    }
+    33.4% {
+        background-position: -453px -291px;
+    }
+    50.1% {
+        background-position: -0px -0px;
+    }
+    66.8% {
+        background-position: -903px -291px;
+    }
+    83.5% {
+        background-position: -753px -291px;
+    }
+    100% {
+        background-position: -603px -291px;
+    }
+}
+
+@-webkit-keyframes boy-rotate {
+    0% {
+        background-position: -603px -291px;
+    }
+    16.7% {
+        background-position: -150px -0px;
+    }
+    33.4% {
+        background-position: -453px -291px;
+    }
+    50.1% {
+        background-position: -0px -0px;
+    }
+    66.8% {
+        background-position: -903px -291px;
+    }
+    83.5% {
+        background-position: -753px -291px;
+    }
+    100% {
+        background-position: -603px -291px;
+    }
+}
+
+
+.girl-rotate {
+    animation-name: girl-rotate;
+    animation-duration: 850ms;
+    animation-iteration-count: 1;
+    animation-timing-function: step-start;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: girl-rotate;
+    -webkit-animation-duration: 850ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: step-start;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: girl-rotate;
+    -moz-animation-duration: 850ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: step-start;
+    -moz-animation-fill-mode: forwards;
+}
+
+
+@keyframes girl-rotate {
+    0% {
+        background-position: -604px -0px;
+    }
+    16.7% {
+        background-position: -151px -0px;
+    }
+    33.4% {
+        background-position: -906px -0px;
+    }
+    50.1% {
+        background-position: -0px -0px;
+    }
+    66.8% {
+        background-position: -302px -0px;
+    }
+    83.5% {
+        background-position: -453px -0px;
+    }
+    100% {
+        background-position: -604px -0px;
+    }
+}
+
+@-webkit-keyframes girl-rotate {
+    0% {
+        background-position: -604px -0px;
+    }
+    16.7% {
+        background-position: -151px -0px;
+    }
+    33.4% {
+        background-position: -906px -0px;
+    }
+    50.1% {
+        background-position: -0px -0px;
+    }
+    66.8% {
+        background-position: -302px -0px;
+    }
+    83.5% {
+        background-position: -453px -0px;
+    }
+    100% {
+        background-position: -604px -0px;
+    }
+}
+
+.slow-walk {
+    animation-name: person-walk;
+    -webkit-animation-name: person-walk;
+    animation-duration: 950ms;
+    -webkit-animation-duration: 950ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: steps(1, start);
+    -webkit-animation-timing-function: steps(1, start);
+}
+
+@keyframes person-walk {
+    0% {
+        background-position: -0px -291px;
+    }
+    25% {
+        background-position: -602px -0px;
+    }
+    50% {
+        background-position: -302px -291px;
+    }
+    75% {
+        background-position: -151px -291px;
+    }
+    100% {
+        background-position: -0px -291px;
+    }
+}
+
+@-webkit-keyframes person-walk {
+    0% {
+        background-position: -0px -291px;
+    }
+    25% {
+        background-position: -602px -0px;
+    }
+    50% {
+        background-position: -302px -291px;
+    }
+    75% {
+        background-position: -151px -291px;
+    }
+    100% {
+        background-position: -0px -291px;
+    }
+}
+
+.slow-walk-flower {
+    animation-name: person-walk-flower;
+    -webkit-animation-name: person-walk-flower;
+    animation-duration: 950ms;
+    -webkit-animation-duration: 950ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: steps(1, start);
+    -webkit-animation-timing-function: steps(1, start);
+}
+
+@keyframes person-walk-flower {
+    0% {
+        background-position: -453px -0px;
+    }
+    25% {
+        background-position: -904px -0px;
+    }
+    50% {
+        background-position: -451px -0px;
+    }
+    75% {
+        background-position: -753px -0px;
+    }
+    100% {
+        background-position: -300px -0px;
+    }
+}
+
+@-webkit-keyframes person-walk-flower {
+    0% {
+        background-position: -453px -0px;
+    }
+    25% {
+        background-position: -904px -0px;
+    }
+    50% {
+        background-position: -451px -0px;
+    }
+    75% {
+        background-position: -753px -0px;
+    }
+    100% {
+        background-position: -300px -0px;
+    }
+}
+
+.pause-walk {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+.door {
+    z-index: 99;
+    height: 231px;
+    width: 182px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.door-left {
+    background-image: url("../images/door-left.png");
+    background-repeat: no-repeat;
+    height: 231px;
+    width: 91px;
+    position: absolute;
+}
+
+.door-right {
+    background-image: url("../images/door-right.png");
+    background-repeat: no-repeat;
+    height: 231px;
+    width: 91px;
+    left: 91px;
+    position: absolute;
+}
