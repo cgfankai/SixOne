@@ -9,11 +9,10 @@ li {
 }
 
 #content {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     position: absolute;
-    border: red solid 2px;
 }
 
 .content-wrap {
@@ -84,6 +83,7 @@ li {
     -moz-animation-timing-function: step-start;
     -moz-animation-fill-mode: forwards;
 }
+
 @keyframes boy-rotate {
     0% {
         background-position: -603px -291px;
@@ -323,4 +323,64 @@ li {
     width: 91px;
     left: 91px;
     position: absolute;
+}
+
+#logo {
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    height: 86px;
+    width: 600px;
+    position: absolute;
+    z-index: 9999 left:100%;
+    opacity: 0
+}
+
+
+.logoshake {
+    animation-name: logoshake;
+    animation-duration: 0.5s;
+    -webkit-animation-name: logoshake;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-name: logoshake;
+    -moz-animation-duration: 0.5s;
+}
+
+@keyframes logoshake {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+@-webkit-keyframes logoshake {
+    0%,
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+    }
 }

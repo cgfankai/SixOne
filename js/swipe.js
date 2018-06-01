@@ -1,5 +1,17 @@
-var contentW = $("#content").width();
-var contentH = $("#content").height();
+var windowH = window.innerHeight;
+var windowW = window.innerWidth;
+var theShort = windowH > windowW ? windowW:windowH;
+
+
+var contentW = theShort * 2
+var contentH = theShort;
+
+$("#content").width(contentW).height(contentH).css({
+  top:(windowH - contentH) /2,
+  left:(windowW - contentW)/2
+});
+
+
 var originalWidthOfBoy = 151;
 var originalHeightOfBoy = 291;
 var roadH = contentH * 0.95;
@@ -93,6 +105,25 @@ function adaptiveGirl() {
   });
 }
 
+function initLogo() { 
+  var oriH = 86;
+  var oriW = 600;
+  var proportionW = contentW * 0.6 / oriW;
+  var proportionH = contentH * 0.10 / oriH;
+  var top = contentH * 0.08 - oriH * 0.5;
+  var left = contentW * 0.5 - 0.5 * oriW ;
+  var scaleStr = "scale(" + proportionW + ", " + proportionH + ")";
+  $("#logo").css({
+    "-webkit-transform": scaleStr,
+    "-moz-transform": scaleStr,
+    "-ms-transform": scaleStr,
+    "-o-transform": scaleStr,
+    transform: scaleStr,
+    top: top + "px",
+    left: left + "px",
+  });
+}
+
 //top,left为boy走到画面中的坐标位置.top为到小男孩较低的top值
 function walkXY(time, top, left, foo) {
   var correctionLeft = left - originalWidthOfBoy * 0.5;
@@ -148,6 +179,7 @@ function closeDoor(){
 
 $(document).ready(function() {
   initDoor()
+  initLogo()
   var timeInterval = 1000;
   //背景图大小自适应
   $(".back-img")
@@ -193,6 +225,13 @@ $(document).ready(function() {
       setTimeout(function(){
         $('#girl').addClass("girl-rotate");
         $('.charector').removeClass('slow-walk-flower').addClass('boy-rotate')
+
+        $('#logo').animate({
+          opacity:1
+        },2000)
+        setTimeout(function(){
+          $('#logo').addClass('logoshake')
+        },2000)
       },1000)
 
     },1000)
