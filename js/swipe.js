@@ -1,3 +1,4 @@
+
 var windowH = window.innerHeight;
 var windowW = window.innerWidth;
 var theShort = windowH > windowW ? windowW:windowH;
@@ -180,7 +181,7 @@ function closeDoor(){
 $(document).ready(function() {
   initDoor()
   initLogo()
-  var timeInterval = 1000;
+  var timeInterval = 5000;
   //背景图大小自适应
   $(".back-img")
     .attr("width", contentW + "px")
@@ -190,7 +191,7 @@ $(document).ready(function() {
   adaptiveBoy();
   adaptiveGirl();
   walkXY(timeInterval, roadH, contentW * 0.59, function() {
-    swipe.scrollTo(contentW, timeInterval);
+    swipe.scrollTo(contentW, timeInterval * 2);
   });
   //第二幕
   setTimeout(function() {
@@ -215,14 +216,15 @@ $(document).ready(function() {
           walkXY(1000, roadH, contentW * 0.59);
       }
     );
-  }, timeInterval * 2);
+  }, timeInterval * 3);
   //第三幕
   setTimeout(function(){
     swipe.scrollTo(contentW * 2, timeInterval);
-    walkXY(1000, roadH, contentW * 0.22);
+    walkXY(timeInterval, roadH, contentW * 0.22);
     setTimeout(function(){
-      walkXY(1000, contentH * 0.7, contentW * 0.47);
+      walkXY(timeInterval, contentH * 0.7, contentW * 0.47);
       setTimeout(function(){
+
         $('#girl').addClass("girl-rotate");
         $('.charector').removeClass('slow-walk-flower').addClass('boy-rotate')
 
@@ -232,10 +234,10 @@ $(document).ready(function() {
         setTimeout(function(){
           $('#logo').addClass('logoshake')
         },2000)
-      },1000)
+      },timeInterval)
 
-    },1000)
-  },timeInterval * 2 + 4000)
+    },timeInterval)
+  },timeInterval * 4)
 
   // walkXY(5000,roadH - 100,contentW)
   // setTimeout(function(){
